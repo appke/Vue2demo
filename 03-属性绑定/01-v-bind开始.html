@@ -12,7 +12,8 @@
 
     <img v-bind:src="imageURL"/>
 
-    <a v-bind:href="url">百度一下</a>
+    <div><a v-bind:href="url">百度一下</a></div>
+    <div><a :href="url">百度一下22</a></div>
 
   </div>
 
@@ -24,8 +25,8 @@
       data: {
         message: 'Hello World!!',
         imageURL: 'https://i2.hdslb.com/bfs/face/c850c18ae6b507d0ef34837f53a51090b6a7451f.jpg@96w_96h_1c.webp',
-        // ur2: 'http://www.baidu.com',
-        url: 'http://www.google.com',
+        url: 'http://www.baidu.com',
+        // url: 'http://www.google.com',
       }
     })
 
