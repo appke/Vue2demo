@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>命令式编程</title>
-
-    <script src="./vue.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>命令式编程</title>
+	<script src="./vue.min.js"></script>
 </head>
+
 <body>
-    <h2 class="title">Hello World</h2>
-    <button class="btn">改变文本</button>
-    
-
-    <script>
-        // 1.定义数据
-        let message = "hello html css js"
-
-        // 2.将数据显示在元素
-        const titleElem = document.getElementsByClassName('title')[0];
-        titleElem.innerHTML = message
+	<h2 class="title">Hello World</h2>
+	<button class="btn">改变文本</button>
 
 
-        const btnElem = document.getElementsByClassName('btn')[0];
-        btnElem.addEventListener('click', e => {
-            console.log('---- btn click');
-            message = "你好啊，命令式编程。。。。"
-            titleElem.innerHTML = message
-        })
-    </script>
+	<script>
+		// 1.定义数据
+		let message = "hello html css js"
+
+		// 2.将数据显示在元素
+		const titleElem = document.getElementsByClassName('title')[0];
+		titleElem.innerHTML = message
+
+		const btnElem = document.getElementsByClassName('btn')[0];
+		btnElem.addEventListener('click', e => {
+			console.log('---- btn click');
+			message = "你好啊，命令式编程。。。。"
+			titleElem.innerHTML = message
+		})
+	</script>
 </body>
+
 </html>
