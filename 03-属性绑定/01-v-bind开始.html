@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+    <h2>{{message}}</h2>
+
+    <img v-bind:src="imageURL"/>
+
+    <a v-bind:href="url">百度一下</a>
+
+  </div>
+
+  <script src="../js/vue.min.js"></script>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello World!!',
+        imageURL: 'https://i2.hdslb.com/bfs/face/c850c18ae6b507d0ef34837f53a51090b6a7451f.jpg@96w_96h_1c.webp',
+        // ur2: 'http://www.baidu.com',
+        url: 'http://www.google.com',
+      }
+    })
+
+    console.log('----', app)
+  </script>
+
+  
+</body>
+</html>
