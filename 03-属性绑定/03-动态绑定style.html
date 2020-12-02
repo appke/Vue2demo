@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <h2 v-bind:style="{color: color}">{{ message }}</h2> -->
+    <!-- <h2 :style="{'font-size': '50px'}">{{ message }}</h2>
+    <h2 :style="{fontSize: '50px'}">{{ message }}</h2> -->
+    <!-- <h2 :style="{fontSize: size}">{{ message }}</h2> -->
+    <!-- <h2 :style="{fontSize: sizeNum + 'px'}">{{ message }}</h2> -->
+    <h2 :style="{color: color, fontSize: size}">{{ message }}</h2>
+    <h2 :style="getStyles()">{{ message }}</h2>
+    
+  </div>
+  
+  <script src="../js/vue.min.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hello style',
+        color: 'blue',
+        size: '50px',
+        sizeNum: 50,
+      },
+      methods: {
+        getStyles: function() {
+          return {backgroundColor: this.color, fontSize: this.size, 'color': 'red'}
+        }
+      }
+    })
+  </script>
+</body>
+</html>
