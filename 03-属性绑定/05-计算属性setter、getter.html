@@ -10,6 +10,10 @@
   <h2>1、{{ firstName + ' ' + lastName}}</h2>
   <h2>2、{{ firstName }} {{ lastName }}</h2>
   <h2>3、{{ getFullName() }}</h2>
+  <h2>3、{{ getFullName() }}</h2>
+  <h2>3、{{ getFullName() }}</h2>
+  <h2>4、{{ fullName }}</h2>
+  <h2>4、{{ fullName }}</h2>
   <h2>4、{{ fullName }}</h2>
 </div>
 
@@ -25,6 +29,7 @@
     computed: {
       fullName: {
         get: function() {
+          console.log('----- fullName')
           return this.firstName + ' ' + this.lastName
         },
       }
@@ -32,6 +37,7 @@
 
     methods: {
       getFullName() {
+        console.log('----- getFullName()')
         return this.firstName + ' ' + this.lastName
       }
     }
