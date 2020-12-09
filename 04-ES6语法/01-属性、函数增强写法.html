@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01-属性、函数增强写法</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{ message }}</h2>
+</div>
+
+<script src="../js/vue.min.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      message: '123'
+    }
+  })
+
+  // 对象字面量
+  const obj = {
+    name: 'muk',
+    age: 28,
+    run: function () {
+      console.log('在跑步……')
+    },
+    eat: function () {
+      console.log('在吃东西……')
+    }
+  }
+  console.log(obj)
+
+
+  // 1.属性的增祺写法
+  const name = "muk2"
+  const age = 29
+  const height = 1.78
+  // ES5的写法
+  const obj2 = {
+    name: name,
+    age: age,
+    height: height
+  }
+  console.log(obj2)
+
+  // ES6
+  const obj3 = {
+    name,
+    age,
+    height
+  }
+  console.log(obj3)
+
+  // 2.函数的增强写法
+  const obj4 = {
+    run() {
+      console.log('跑步ing……')
+    }
+  }
+  obj4.run()
+
+
+</script>
+</body>
+</html>
