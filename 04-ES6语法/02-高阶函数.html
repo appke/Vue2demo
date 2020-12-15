@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02-高阶函数</title>
+  <script src="../js/vue.min.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <h2>{{message}}</h2>
+    <h2>{{handleNum()}}</h2>
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello message',
+        nums: [10, 20, 111, 222, 444, 40, 50]
+      },
+
+      methods: {
+
+        handleNum() {
+          let newNums = this.nums.filter(function (n) {
+            return n < 100
+          })
+          console.log(newNums);
+
+
+          let newNums2 = newNums.map(function (n){
+            return n * 2
+          })
+          console.log(newNums2)
+
+          // 上一个值
+          let newNums3 = newNums2.reduce(function (preValue, n){
+            return preValue + n
+          }, 0)
+          console.log(newNums3)
+
+          // 第一次： preValue 0 n 20
+          // 第二次： preValue 20 n 40
+          // 第三次： preValue 60 n 80
+          // 第四次： preValue 140 n 100
+          // 240
+
+          let total = this.nums.filter(function(n){
+            return n < 100
+          }).map(function(n) {
+            return n * 2
+          }).reduce(function(prevalue, n){
+            return prevalue + n
+          }, 0)
+          console.log(total)
+          
+        }
+      }
+
+
+
+
+
+
+
+    })
+  </script>
+
+</body>
+
+</html>
