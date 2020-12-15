@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05-数组响应式</title>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+  <ul>
+    <li v-for="item in letters">
+      {{item}}
+    </li>
+  </ul>
+  <button @click="btnClick">按钮</button>
+  
+
+</div>
+
+<script>
+
+const app = new Vue({
+  el: '#app',
+  data: {
+    letters: ['A', 'B', 'C', 'D', 'E']
+  },
+  methods: {
+    btnClick() {
+      // this.letters.push('aaa')
+      // this.letters.push('aaa', 'bbb', 'ccc')
+
+      // this.letters.pop()
+
+      // this.letters.shift()
+
+      // this.letters.unshift('ccc')
+      
+      // this.letters.splice(2,1)
+      // (start, length, elements)
+
+      // this.letters.reverse()
+
+
+
+    }
+  }
+})
+
+</script>
+  
+</body>
+</html>
