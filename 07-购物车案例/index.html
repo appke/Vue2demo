@@ -9,7 +9,7 @@
 <body>
 
 <div id="app">
-  <table>
+  <table style="width: 50%">
     <thead>
       <tr>
         <th></th>
@@ -26,7 +26,7 @@
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.date}}</td>
-        <td>{{item.price ｜ showPrice}}</td>
+        <td>{{item.price | showPrice }}</td>
         <td>
           <button>-</button>
           {{item.count}}
