@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06-作业讲解</title>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <ul>
+    <li v-for="(item, index) in movies"
+    :class="{active: currentIndex === index}"
+    @click="liClick(index)">
+      {{item}}
+    </li>
+  </ul>
+</div>
+<button>按钮</button>
+
+<script>
+const app = new Vue({
+  el: '#app',
+  data: {
+    movies: ['海贼王', '盗梦空间', '肖生克的救赎', '最佳出价', '放牛班的春天'],
+    currentIndex: 0
+    
+  }, 
+  methods: {
+    liClick(index) {
+      this.currentIndex = index
+    }
+  }
+})
+</script>
+
+
+<style>
+  .active {
+    color: hotpink;
+  }
+</style>
+
+</body>
+</html>
