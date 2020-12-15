@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02-radio类型</title>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <label for="license">
+    <input type="checkbox" id="license" v-model="isAgress">同意协议
+  </label>
+  <h2>你选择是：{{isAgress}}</h2>
+  <button :disabled="!isAgress">下一步</button>
+  
+  <br>
+
+  <input type="checkbox" value="篮球" v-model="hobbies">篮球
+  <input type="checkbox" value="足球" v-model="hobbies">足球
+  <input type="checkbox" value="乒乓球" v-model="hobbies">乒乓球
+  <input type="checkbox" value="羽毛球" v-model="hobbies">羽毛球
+  <h2>你的爱好是：{{hobbies}}</h2>
+  
+</div>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      isAgress: false,
+      hobbies: []
+    }
+    
+  })
+</script>
+</body>
+</html>
