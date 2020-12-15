@@ -36,6 +36,13 @@ const app = new Vue({
       price: 148.00,
       count: 1
     },
+    {
+      id:6,
+      name: '《Pthon语言入门》',
+      date: '2020-02',
+      price: 10.00,
+      count: 2
+    },
     ]
   },
   methods: {
@@ -58,10 +65,20 @@ const app = new Vue({
   computed: {
     totalPrice() {
       let totalPrice = 0.0
-      for (let i=0; i< this.books.length; i++) {
-        const book = this.books[i]
+      // for (let i=0; i< this.books.length; i++) {
+      //   const book = this.books[i]
+      //   totalPrice += book.price * book.count
+      // }
+
+      // for (let i in this.books) {
+      //   const book = this.books[i]
+      //   totalPrice += book.price * book.count
+      // }
+
+      for (let book of this.books) {
         totalPrice += book.price * book.count
       }
+
       return totalPrice
     }
   },
