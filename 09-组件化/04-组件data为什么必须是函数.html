@@ -9,14 +9,34 @@
 <body>
 <div id="app">
   <h2>{{message}}</h2>
+  <cpn></cpn>
+  <cpn></cpn>
 </div>
+
+
+<template id="my-cpn">
+  <div>
+    <h2>{{title}}</h2>
+    <p>我是文字，哈哈哈哈</p>
+  </div>
+</template>
+
 <script>
   const app = new Vue({
     el: '#app',
     data: {
       message: 'Hello, Vue'
+    },
+    components: {
+      'cpn': {
+        template: '#my-cpn',
+        data() {
+          return {
+            title: 'hahaaaa111'
+          }
+        }
+      }
     }
-    
   })
 </script>
 </body>
