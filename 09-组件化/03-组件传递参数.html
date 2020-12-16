@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>组件传递参数</title>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <h2>组件通信</h2>
+  <cpn></cpn>
+</div>
+
+<template id="my-cpn">
+  <div>
+    <h2>{{title}}</h2>
+    <p>我是文字，哈哈哈哈</p>
+  </div>
+</template> 
+
+<script>
+  Vue.component('cpn', {
+    template: '#my-cpn',
+    data() {
+      return {
+        title: '标题aaa' 
+      }
+    }
+  })
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello, Vue'
+    }
+    
+  })
+</script>
+
+
+</body>
+</html>
