@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>子传父2</title>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+<!-- 父组件  -->
+<div id="app">
+  <h2>{{message}}</h2>
+  <cpn v-on:itemclick="cpnClick"></cpn>
+</div>
+
+<!-- 子组件模板  -->
+<template id="my-cpn">
+  <div>
+    <button v-for="item in categories" v-on:click="btnClick(item)">{{item.name}}</button>
+  </div>
+</template>
+
+<script>
+  const cpn = {
+    template: '#my-cpn',
+    props: {
+      cmovies:{
+        type: Array,
+        default: ['haha', 'hehhe']
+      }
+    },
+    data() {
+      return {
+        title: "我是标题啊",
+        categories: [
+          {id: 'aaa', name: '家电数码'},
+          {id: 'bbb', name: '汽车生活'},
+          {id: 'ccc', name: '电脑办公'},
+          {id: 'ddd', name: '个护清洁'},
+        ]
+      }
+    },
+    methods: {
+      btnClick(item) {
+        this.$emit('itemclick', item)
+      }
+    }
+  }
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello, Vue'
+    },
+    components: {
+      cpn,
+    },
+    methods: {
+      cpnClick(e) {
+        console.log('------ ', e)
+      }
+    }
+  })
+</script>
+</body>
+</html>
