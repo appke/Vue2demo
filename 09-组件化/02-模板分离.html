@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="../js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+
+  <cpn></cpn>
+  <cpn></cpn>
+  <cpn></cpn>
+</div>
+
+<script type="text/x-template" id="my-cpn">
+<div>
+  <h2>我是标题111</h2>
+  <p>我是内容，哈哈哈哈</p>
+</div>
+</script>
+
+<!-- <templata id="my-cpn">
+<div>
+  <h2>我是标题111</h2>
+  <p>我是内容，哈哈哈哈</p>
+</div>
+</templata> -->
+
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello, Vue'
+    },
+    components: {
+      'cpn': {
+        template: '#my-cpn'
+      }
+    }
+    // components: {
+    //   'cpn': '#my-cpn'
+    // }
+  })
+</script>
+</body>
+</html>
