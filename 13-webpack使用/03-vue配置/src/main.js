@@ -17,9 +17,12 @@ require('./css/special.less')
 
 // 使用vue进行开发
 import Vue from 'vue'
-const app = new Vue({
+// import App from './vue/app'
+import App from './vue/app.vue'
+new Vue({
   el: '#app',
-  data: {
-    message: 'Hellow WebPac'
+  template: '<App/>',
+  components: {
+    App,
   }
 })
