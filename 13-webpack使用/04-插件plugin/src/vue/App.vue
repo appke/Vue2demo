@@ -4,6 +4,8 @@
     <p class="desc">{{ desc }}</p>
     <button @click="btnClick">按钮</button>
 
+    呵额 --- 
+
     <Cpn></Cpn>
 
   </div>
