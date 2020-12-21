@@ -6,7 +6,7 @@ module.exports = {
     // 绝对路径
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    // publicPath: 'dist/'
+    publicPath: 'dist/'
   },
   module: {
     rules: [

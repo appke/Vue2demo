@@ -1,6 +1,6 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { resolve } = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -8,7 +8,7 @@ module.exports = {
     // 绝对路径
     path: resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'dist/'
+    // publicPath: 'dist/'
   },
   resolve: {
     alias: {
@@ -16,6 +16,7 @@ module.exports = {
     }
   },
   plugins: [
+    new webpack.BannerPlugin('最终版权归 穆良 所有'),
     new HtmlWebpackPlugin({
       template: 'index.html'
     })
