@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+<script>
+// setTimeout(function () {
+//   console.log('function --- ', this);
+// }, 1000)
+
+// setTimeout(() => {
+//   console.log('arrow --- ', this);
+// }, 1000)
+
+
+// const obj = {
+//   aaa() {
+//     setTimeout(function () {
+//       console.log('function --- ', this);
+//     }, 1000),
+
+//     setTimeout(() => {
+//       console.log('arrow --- ', this);
+//     }, 1000)
+//   }
+// }
+// obj.aaa()
+
+const obj = {
+  aaa() {
+    setTimeout(function () {
+      setTimeout(function () {
+        console.log('function --- ', this); //Window
+      }, 1000),
+
+      setTimeout(() => {
+        console.log('arrow --- ', this); //Window
+      }, 1000)
+    }, 1000),
+
+    setTimeout(() => {
+      setTimeout(function () {
+        console.log('function --- ', this); //Window
+      }, 1000),
+
+      setTimeout(() => {
+        console.log('arrow --- ', this); //obj
+      }, 1000)
+    }, 1000)
+  }
+}
+obj.aaa()
+
+</script>
+
+</body>
+
+</html>
