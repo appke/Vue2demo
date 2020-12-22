@@ -5,6 +5,7 @@
     <button @click="btnClick">按钮</button>
 
     呵额 --- 
+    haolema 
 
     <Cpn></Cpn>
 

@@ -1,13 +1,12 @@
 const { resolve } = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
   output: {
     // 绝对路径
-    path: resolve(__dirname, 'dist'),
+    path: resolve(__dirname, '../dist'),
     filename: 'bundle.js',
     // publicPath: 'dist/'
   },
@@ -20,13 +19,8 @@ module.exports = {
     new webpack.BannerPlugin('最终版权归 穆良 所有'),
     new HtmlWebpackPlugin({
       template: 'index.html'
-    }),
-    new UglifyJsPlugin(),
+    })
   ],
-  devServer: {
-    contentBase: './dist',
-    inline: true
-  },
   module: {
     rules: [
       {
