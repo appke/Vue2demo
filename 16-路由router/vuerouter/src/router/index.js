@@ -9,6 +9,10 @@ Vue.use(VueRouter)
 // 2.创建VueRouter对象
 const routes = [
   {
+    path: '',
+    redirect: '/home'
+  },
+  {
     path: '/home',
     component: Home
   },
@@ -19,7 +23,8 @@ const routes = [
 ]
 const router = new VueRouter({
   // 配置路由和组件之间的映射关系
-  routes
+  routes,
+  mode: 'history'
 })
 
 // 3.将router对象传入到Vue实例中 

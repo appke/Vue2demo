@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
+    <h2>我是首页 </h2>
     <router-link to="/home">首页</router-link>
     <router-link to="about">关于</router-link>
+    <router-view/>
   </div>
 </template>
 
@@ -13,6 +13,5 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
 </style>
