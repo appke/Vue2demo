@@ -24,7 +24,8 @@ const routes = [
 const router = new VueRouter({
   // 配置路由和组件之间的映射关系
   routes,
-  mode: 'history'
+  mode: 'history',
+  linkActiveClass: 'active'
 })
 
 // 3.将router对象传入到Vue实例中 
