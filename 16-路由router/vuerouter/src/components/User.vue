@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h2>我是首页</h2>
-    <p>首页，哈哈哈</p>
+    <h2>Mine页面</h2>
+    <p>首页，11111</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "我的",
 };
 </script>
 

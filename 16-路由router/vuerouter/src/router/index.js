@@ -2,6 +2,7 @@ import VueRouter from 'vue-router'
 import Vue from 'vue'
 import Home from '../components/Home'
 import About from '../components/About'
+import User from '../components/User'
 
 // 1.通过Vue.use(插件)，安装插件
 Vue.use(VueRouter)
@@ -19,7 +20,11 @@ const routes = [
   {
     path: '/about',
     component: About,
-  }
+  },
+  {
+    path: '/user/:userid',
+    component: User,
+  },
 ]
 const router = new VueRouter({
   // 配置路由和组件之间的映射关系
