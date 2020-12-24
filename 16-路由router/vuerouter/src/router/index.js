@@ -25,6 +25,10 @@ const routes = [
     component: Home,
     children: [
       {
+        path: '',
+        redirect: 'news' 
+      },
+      {
         path: 'news',
         component: HomeNews
       },
