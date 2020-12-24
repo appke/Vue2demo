@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>我是首页 </h2>
+    <h2>我是APP组件 </h2>
     <!-- <router-link to="/home" tag="button" replace>首页</router-link>
     <router-link to="about" tag="button" replace>关于</router-link> -->
 
@@ -10,8 +10,8 @@
     <router-link to="/home">首页</router-link>
     <router-link to="/about">关于</router-link>
     <router-link :to="/user/+userId">我的</router-link>
-
-    <router-view/>
+    
+    <router-view></router-view>
 
   </div>
 </template>

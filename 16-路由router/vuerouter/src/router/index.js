@@ -4,10 +4,11 @@ import Vue from 'vue'
 // import About from '../components/About'
 // import User from '../components/User'
 
-const Home = import('../components/Home')
-const About = import('../components/About')
-const User = import('../components/User')
-
+const Home = () => import('../components/Home')
+const About = () => import('../components/About')
+const User = () => import('../components/User')
+const HomeNews = () => import('../components/HomeNews')
+const HomeMessage = () => import('../components/HomeMessage')
 
 
 // 1.通过Vue.use(插件)，安装插件
@@ -21,7 +22,17 @@ const routes = [
   },
   {
     path: '/home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: 'news',
+        component: HomeNews
+      },
+      {
+        path: 'message',
+        component: HomeMessage
+      },
+    ]
   },
   {
     path: '/about',
