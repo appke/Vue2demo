@@ -5,10 +5,12 @@ import Vue from 'vue'
 // import User from '../components/User'
 
 const Home = () => import('../components/Home')
-const About = () => import('../components/About')
-const User = () => import('../components/User')
 const HomeNews = () => import('../components/HomeNews')
 const HomeMessage = () => import('../components/HomeMessage')
+
+const About = () => import('../components/About')
+const User = () => import('../components/User')
+const Profile = () => import('../components/Profile')
 
 
 // 1.通过Vue.use(插件)，安装插件
@@ -45,6 +47,10 @@ const routes = [
   {
     path: '/user/:userid',
     component: User,
+  },
+  {
+    path: '/profile',
+    component: Profile,
   },
 ]
 const router = new VueRouter({

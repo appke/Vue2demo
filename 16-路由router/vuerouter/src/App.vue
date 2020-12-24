@@ -10,6 +10,7 @@
     <router-link to="/home">首页</router-link>
     <router-link to="/about">关于</router-link>
     <router-link :to="/user/+userId">我的</router-link>
+    <router-link :to="{path:'/profile', query: {name: 'codermuk'}}">档案</router-link>
     
     <router-view></router-view>
 
