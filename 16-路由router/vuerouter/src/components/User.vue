@@ -1,13 +1,14 @@
 <template>
   <div>
     <h2>Mine页面</h2>
-    <p>首页，11111</p>
+    <p>我的，11111</p>
+    <p>登陆用户: {{$route.params.userid}}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "我的",
+  name: "User",
 };
 </script>
 

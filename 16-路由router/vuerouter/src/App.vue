@@ -21,7 +21,7 @@ export default {
   name: 'App',
   data() {
     return {
-      userId: 'laow'
+      userId: 'laow2'
     }
   },
   methods: {
