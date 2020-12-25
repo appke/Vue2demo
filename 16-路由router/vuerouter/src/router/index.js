@@ -25,6 +25,9 @@ const routes = [
   {
     path: '/home',
     component: Home,
+    meta: {
+      title: '首页'
+    },
     children: [
       {
         path: '',
@@ -43,14 +46,27 @@ const routes = [
   {
     path: '/about',
     component: About,
+    meta: {
+      title: '关于'
+    },
   },
   {
     path: '/user/:userid',
     component: User,
+    meta: {
+      title: '我的'
+    },
   },
   {
     path: '/profile',
     component: Profile,
+    meta: {
+      title: '档案'
+    },
+    beforeEnter: (to, from, next) => {
+      console.log(' ---- 组件内 beforeEnter');
+      // next()
+    }
   },
 ]
 const router = new VueRouter({
@@ -59,6 +75,19 @@ const router = new VueRouter({
   mode: 'history',
   linkActiveClass: 'active'
 })
+
+// 前置钩子，跳转之前回调
+router.beforeEach((to, from, next) => {
+  // 从from跳到to，永远取第1个
+  document.title = to.matched[0].meta.title
+  // console.log(to)
+  next()
+})
+
+router.afterEach((to, from) => {
+  // console.log('--- afterEach');
+})
+
 
 // 3.将router对象传入到Vue实例中 
 export default router
