@@ -26,7 +26,7 @@ export default {
   name: "App",
   data() {
     return {
-      userId: "laow2",
+      userId: "laoWang2",
     };
   },
   methods: {
