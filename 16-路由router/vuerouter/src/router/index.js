@@ -63,10 +63,10 @@ const routes = [
     meta: {
       title: '档案'
     },
-    beforeEnter: (to, from, next) => {
-      console.log(' ---- 组件内 beforeEnter');
-      // next()
-    }
+    // beforeEnter: (to, from, next) => {
+    //   console.log(' ---- 组件内 beforeEnter');
+    //   next()
+    // }
   },
 ]
 const router = new VueRouter({

@@ -15,6 +15,3 @@ export default {
   name: 'HomeMessage',
 };
 </script>
-
-<style>
-</style>

@@ -15,6 +15,3 @@ export default {
   name: "HomeNews",
 };
 </script>
-
-<style>
-</style>>
