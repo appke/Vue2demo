@@ -14,14 +14,30 @@
 <script>
 export default {
   name: "Home",
+  data() {
+    return {
+      path: '/home/news'
+    }
+  },
   created() {
     console.log('--- home created')
   },
   destroyed() {
     console.log('--- home destroyed')
   },
-  methods: {
+  activated() {
+    this.$router.push(this.path);
+  },
+  deactivated() {
+    console.log('deactivated --- this.$route ', this.$route);
+    console.log('deactivated --- ', this.path);
+  },
 
-  }
+  beforeRouteLeave(to, from, next) {
+    console.log('beforeRouteLeave ', this.path);
+    console.log('beforeRouteLeave ', this.$route.path);
+    this.path = this.$route.path
+    next()
+  },
 };
 </script>

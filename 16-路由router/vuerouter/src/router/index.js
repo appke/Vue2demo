@@ -80,7 +80,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // 从from跳到to，永远取第1个
   document.title = to.matched[0].meta.title
-  console.log(to)
+  // console.log(to)
   next()
 })
 
