@@ -10,18 +10,33 @@
 export default {
   name: "TabBarItem",
   props: {
-    path: String
+    path: String,
   },
   data() {
     return {
-      isActive: false,
+      // isActive: false,
     };
+  },
+  computed: {
+    isActive: {
+      // 当前处于活跃的路由
+      // 传过来的path
+      // /home -> item1(/home) = true
+      // /home -> item1(/category) = false
+      // /home -> item1(/shopcart) = false
+      // /home -> item1(/profile) = false
+      get() {
+        return this.$route.path.indexOf(this.path) !== -1;
+      },
+      set(val){}
+    },
   },
   methods: {
     itemClick() {
-      this.$router.replace(this.path)
+      this.$router.replace(this.path);
+      this.isActive = !this.isActive;
     },
-  }
+  },
 };
 </script>
 
