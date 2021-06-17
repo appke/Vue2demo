@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01-Promise</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>01-Promise</h2>
+  </div>
+
+  <script src="../js/vue.min.js"></script>
+  
+  <script>
+    
+    // setTimeout(() => {
+    //   console.log('hello world');
+    // }, 1000);
+
+
+    Promise.all([
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("result1")
+        }, 1000);
+      }),
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("result2")
+        }, 2000);
+      }),
+    ]).then(results => {
+      console.log(results);
+    })
+
+  </script>
+</body>
+
+</html>
